@@ -13,3 +13,6 @@ esm
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# temp
+config.json

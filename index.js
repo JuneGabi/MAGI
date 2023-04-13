@@ -3,10 +3,10 @@ const { token, prefix } = require('./config.json');
 
 let client = new Client();
 
-client.on("ready", async () =>
+client.on("ready", async () => {
     console.info(`Logged in as ${client.user.username}!`);
     client.api.patch("/users/@me", { status: { text: `Hello World!`, presence: "Online" } });
-);
+});
 
 client.on("message", async (message) => {
     if (message.content === prefix + "ping") {
