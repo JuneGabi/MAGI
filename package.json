@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/JuneGabi/MAGI/issues"
   },
-  "homepage": "https://github.com/JuneGabi/MAGI#readme"
+  "homepage": "https://github.com/JuneGabi/MAGI#readme",
+  "dependencies": {
+    "revolt.js": "^6.0.20"
+  }
 }
