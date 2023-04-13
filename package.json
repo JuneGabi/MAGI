@@ -1,0 +1,25 @@
+{
+  "name": "magi",
+  "version": "1.0.0",
+  "description": "moderation bot for Revolt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuneGabi/MAGI.git"
+  },
+  "keywords": [
+    "magi",
+    "revolt",
+    "bot",
+    "moderation"
+  ],
+  "author": "Justine",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuneGabi/MAGI/issues"
+  },
+  "homepage": "https://github.com/JuneGabi/MAGI#readme"
+}
