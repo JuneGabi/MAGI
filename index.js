@@ -10,7 +10,7 @@ client.on("ready", async () => {
 
 client.on("message", async (message) => {
     if (message.content === "Mar") {
-        message.channel.sendMessage("Mar!!!");
+        message.channel.sendMessage("Mar!!!!");
     }
 });
 
@@ -21,13 +21,32 @@ client.on("message", async (message) => {
 });
 
 client.on("message", async (message) => {
+    if (message.content === prefix + "batata") {
+        message.reply(`seu nome é: ${message.username}`)
+    }
+});
+
+client.on("message", async (message) => {
+    if (message.content.includes("quem é Heya?")) {
+        message.reply("um mané!!! :b");
+    }
+});
+
+client.on("message", async (message) => {
     if (message.content.includes("linux")) {
         message.reply("i use arch btw");
     }
 });
 
 client.on("message", async (message) => {
-    if (message.content === "te amo magi") {
+    if (message.content.includes("furry")) {
+        message.reply("L + ratio + you stink");
+        message.react("01G83M8KJE4KGQCQT2PP5EH3VT");
+    }
+});
+
+client.on("message", async (message) => {
+    if (message.content.includes("te amo magi")) {
         message.react(encodeURIComponent("❤️"));
     }
 });

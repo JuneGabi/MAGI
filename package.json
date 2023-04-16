@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/JuneGabi/MAGI#readme",
   "dependencies": {
+    "openai": "^3.2.1",
     "revolt.js": "^6.0.20"
   }
 }
