@@ -15,14 +15,43 @@ client.on("message", async (message) => {
 });
 
 client.on("message", async (message) => {
-    if (message.content === prefix + "test") {
-        message.reply("response");
+    if (message.content.startsWith(prefix + "cat")) {
+        let text = message.content.slice(5).replace(/ /g, "%20")
+        message.reply(`https://cataas.com/cat/says/${text}`);
     }
 });
 
 client.on("message", async (message) => {
-    if (message.content === prefix + "batata") {
+    if (message.content.startsWith(prefix + "morbius")) {
+        message.reply("IT'S MORBIN TIME! GRAAHH :01G7J29702CWJ54ZXKH539VAJJ:");
+        message.react("01G7J29702CWJ54ZXKH539VAJJ");
+        message.react("01GBGRQEXWM50B69Y0HBVD0GAQ");
+    }
+});
+
+client.on("message", async (message) => {
+    if (message.content.startsWith(prefix + "candice")) {
+        message.channel.sendMessage("JOE MAMA HUNG HERSELF!!");
+        message.channel.sendMessage("GRAAAAHHHHHHHHHHHHHH");
+        message.channel.sendMessage(":01GC295YYZBKDFGAKA2Y2N4HAX:");
+        message.react("01GC295YYZBKDFGAKA2Y2N4HAX");
+    }
+});
+
+client.on("message", async (message) => {
+    if (message.content === prefix + "nome") {
         message.reply(`seu nome é: ${message.username}`)
+    }
+});
+
+client.on("message", async (message) => {
+    if (message.content === prefix + "jueves") {
+        const today = new Date();
+        if (today.getDay() === 4) {
+            message.reply(`Feliz Jueves ${message.username}!!!!`)
+        } else {
+            message.reply(`It's not Jueves yet :c`)
+        }
     }
 });
 
