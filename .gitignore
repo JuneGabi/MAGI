@@ -18,3 +18,4 @@ esm
 config.json
 chat.js
 index-test.js
+request.js
