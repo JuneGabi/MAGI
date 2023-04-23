@@ -1,11 +1,40 @@
 const { Client } = require("revolt.js");
 const { token, prefix } = require('./config.json');
+const { addLine, getLine, readLines } = require('./phrases');
 
 let client = new Client();
 
 client.on("ready", async () => {
     console.info(`Logged in as ${client.user.username}!`);
     client.api.patch("/users/@me", { status: { text: `Hello World!`, presence: "Online" } });
+});
+
+client.on("message", async (message) => {
+    if (message.content.startsWith(prefix + "save")) {
+        let phrase = message.content.slice(7)
+        addLine(phrase);
+        message.reply(`added: ${phrase}`);
+    }
+});
+
+client.on("message", async (message) => {
+    if (message.content.startsWith(prefix + "show")) {
+        const regex = /!!show\s(\d+)/;
+        let match = message.content.match(regex);
+        if (match) {
+            const number = parseInt(match[1]);
+            message.reply(getLine(number));
+        } else {
+            message.reply('Invalid input. Please provide a number after "!!show".');
+        }
+    }
+});
+
+client.on("message", async (message) => {
+    if (message.content.startsWith(prefix + "printlines")) {
+        let lines = readLines();
+        message.reply(lines.join('\n'));
+    }
 });
 
 client.on("message", async (message) => {
@@ -16,7 +45,7 @@ client.on("message", async (message) => {
 
 client.on("message", async (message) => {
     if (message.content.startsWith(prefix + "cat")) {
-        let text = message.content.slice(5).replace(/ /g, "%20")
+        let text = message.content.slice(6).replace(/ /g, "%20")
         message.reply(`https://cataas.com/cat/says/${text}`);
     }
 });
